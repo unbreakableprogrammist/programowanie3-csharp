@@ -12,3 +12,4 @@
 /Users/krzysztof/Documents/csharp/Wyklad/obj/Debug/net9.0/Wyklad.pdb
 /Users/krzysztof/Documents/csharp/Wyklad/obj/Debug/net9.0/Wyklad.genruntimeconfig.cache
 /Users/krzysztof/Documents/csharp/Wyklad/obj/Debug/net9.0/ref/Wyklad.dll
+/Users/krzysztof/Documents/csharp/Wyklad/obj/Debug/net9.0/Wyklad.sourcelink.json
