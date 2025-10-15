@@ -1,0 +1,14 @@
+/Users/krzysztof/Documents/csharp/Wyklad/bin/Debug/net9.0/Wyklad
+/Users/krzysztof/Documents/csharp/Wyklad/bin/Debug/net9.0/Wyklad.deps.json
+/Users/krzysztof/Documents/csharp/Wyklad/bin/Debug/net9.0/Wyklad.runtimeconfig.json
+/Users/krzysztof/Documents/csharp/Wyklad/bin/Debug/net9.0/Wyklad.dll
+/Users/krzysztof/Documents/csharp/Wyklad/bin/Debug/net9.0/Wyklad.pdb
+/Users/krzysztof/Documents/csharp/Wyklad/obj/Debug/net9.0/Wyklad.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krzysztof/Documents/csharp/Wyklad/obj/Debug/net9.0/Wyklad.AssemblyInfoInputs.cache
+/Users/krzysztof/Documents/csharp/Wyklad/obj/Debug/net9.0/Wyklad.AssemblyInfo.cs
+/Users/krzysztof/Documents/csharp/Wyklad/obj/Debug/net9.0/Wyklad.csproj.CoreCompileInputs.cache
+/Users/krzysztof/Documents/csharp/Wyklad/obj/Debug/net9.0/Wyklad.dll
+/Users/krzysztof/Documents/csharp/Wyklad/obj/Debug/net9.0/refint/Wyklad.dll
+/Users/krzysztof/Documents/csharp/Wyklad/obj/Debug/net9.0/Wyklad.pdb
+/Users/krzysztof/Documents/csharp/Wyklad/obj/Debug/net9.0/Wyklad.genruntimeconfig.cache
+/Users/krzysztof/Documents/csharp/Wyklad/obj/Debug/net9.0/ref/Wyklad.dll
