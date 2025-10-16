@@ -216,6 +216,36 @@ class Wyklad
         float[,] matrix = new float[3, 4]; // matrix 3 wiersze , cztery kolumny 
     }
     //olajestsuper:3
+
+    static void instrukcje()
+    {
+        int x = 2;
+
+        switch (x)
+        {
+            case 1:
+                Console.WriteLine("Jeden");
+                break;
+            case 2:
+                Console.WriteLine("Dwa");
+                break;
+            default:
+                Console.WriteLine("Coś innego");
+                break;
+        }
+
+        int cardNumber = 13;
+        string cardName = cardNumber switch
+        {
+            13 => "King", // constant pattern
+            12 => "Queen",
+            11 => "Jack",
+            > 1 and < 11 => "Pip card", // relational pattern
+            1 => "Ace",
+            // discard pattern, equivalent of default:
+            _ => throw new ArgumentOutOfRangeException()
+        };
+    }
     static void Main(string[] args)
     {
         if (args[0] == "1")
@@ -239,6 +269,8 @@ class Wyklad
             Stringi();
         else if (args[0] == "8")
             tablice();
+        else if (args[0] == "9")
+            instrukcje();
     }
 }
 
