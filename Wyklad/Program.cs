@@ -184,6 +184,38 @@ class Wyklad
         Console.WriteLine(description);
         // innymi slowy w {} mozna wstawic cokoliwiek co nie jest stringiem , nawet warunek : Console.WriteLine($"Coin flip: {(random.NextDouble() < 0.5 ? "heads" : "tails")}");
     }
+
+    static void tablice()
+    {
+        // tablice sa nierozszerzalne 
+        int[] primes = new int[] {2, 3, 5, 7, 11};
+        char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+        uint[] even = [0, 2, 4, 6, 8]; // C# 12
+        float[] data = new float[10]; 
+        Array array = primes;  // trzyma referencje , dodatkowo jak damy array to taki jakby typ nijaki , tzn mozemy przyporzadkowac go do jakiejkolwiek tablicy ale wtedy to jest tylko do odczytu 
+        primes[1] = 200;
+        Console.WriteLine($"Primes array length: {array.Length}");
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.WriteLine(primes[i]);
+        }
+        int firstElem = primes[0], secondElem = primes[1];
+        int lastElem = primes[^1], secondToLastElem = primes[^2];
+        Index first = 0;
+        Index last = ^1;
+        firstElem = primes[first]; lastElem = primes[last];
+        // tablica [i..j] , od i wlacznie do j wylacznie, poczatek = 0 koniec = ^0 , bo ostatni element to ^1
+        int[] firstTwo = primes[..2]; //exclusive end
+        int[] withoutFirst = primes[1..]; // inclusive start
+        int[] withoutLast = primes[..^1];
+        int[] withoutFirstAndLast = primes[1..^1];
+        int[] all = primes[..];
+        Range lastTwoRange = ^2..;
+        int[] lastTwo = primes[lastTwoRange];
+        // tablice prostokatne 
+        float[,] matrix = new float[3, 4]; // matrix 3 wiersze , cztery kolumny 
+    }
+    //olajestsuper:3
     static void Main(string[] args)
     {
         if (args[0] == "1")
@@ -205,5 +237,9 @@ class Wyklad
             typy_podstawowe();
         else if (args[0] == "7")
             Stringi();
+        else if (args[0] == "8")
+            tablice();
     }
 }
+
+
