@@ -9,6 +9,8 @@ public abstract class Matrix
 
     protected Matrix(int rows, int columns)
     {
+        if (rows <= 0 || columns <= 0)
+            throw new ArgumentException("Row and Column count must be greater than zero");
         Rows = rows;
         Columns = columns;
     }
