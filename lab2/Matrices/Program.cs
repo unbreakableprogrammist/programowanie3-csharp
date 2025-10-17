@@ -1,7 +1,7 @@
 ﻿#define STAGE01
 #define STAGE02
-// #define STAGE03
-// #define STAGE04
+#define STAGE03
+#define STAGE04
 
 
 using Matrices.Matrix;
