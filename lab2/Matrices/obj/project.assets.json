@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/krzysztof/Documents/csharp/lab2/Matrices.csproj",
+      "projectUniqueName": "/Users/krzysztof/Documents/csharp/lab2/Matrices/Matrices.csproj",
       "projectName": "Matrices",
-      "projectPath": "/Users/krzysztof/Documents/csharp/lab2/Matrices.csproj",
+      "projectPath": "/Users/krzysztof/Documents/csharp/lab2/Matrices/Matrices.csproj",
       "packagesPath": "/Users/krzysztof/.nuget/packages/",
-      "outputPath": "/Users/krzysztof/Documents/csharp/lab2/obj/",
+      "outputPath": "/Users/krzysztof/Documents/csharp/lab2/Matrices/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/krzysztof/.nuget/NuGet/NuGet.Config"

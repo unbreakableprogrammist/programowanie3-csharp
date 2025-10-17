@@ -6,10 +6,6 @@
 
 using Matrices.Matrix;
 
-abstract class Matrix
-{
-    
-}
 
 static class Program
 {
