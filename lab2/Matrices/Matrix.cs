@@ -15,7 +15,9 @@ public abstract class Matrix
         Columns = columns;
     }
     public abstract float this[int row, int column] { get; set;}
-
+    public abstract Matrix Transpose();
+    public abstract void Identity();
+    public abstract float Norm();
     public override string ToString()
     {
         StringBuilder sb = new StringBuilder();

@@ -29,5 +29,40 @@ public class SparseMatrix : Matrix
                 _data[(row, column)] =  value;
         }
     }
+
+    public override Matrix Transpose()
+    {
+        SparseMatrix result = new SparseMatrix();
+        foreach (var item in _data)
+        {
+           (int row, int column) = item.Key;
+           result._data[(column, row)] = item.Value;
+        }
+        return result;
+    }
+
+    public override void Identity()
+    {
+        if (Rows != Columns)
+            throw new InvalidOperationException("Matrix is not a square matrix");
+        
+        _data.Clear();
+
+        for (int i = 0; i < Rows; i++)
+            _data[(i, i)] = 1.0f;
+    }
+
+    public override float Norm()
+    {
+        float result = 0.0f;
+        
+        foreach (float val in _data.Values)
+            result += val * val;
+        
+        return MathF.Sqrt(result);
+    }
+
+   
+
     
 }

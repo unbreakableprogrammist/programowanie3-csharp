@@ -23,4 +23,54 @@ public class DenseMatrix : Matrix
                 _data[row, column] = value;
         }
     }
+    public override Matrix Transpose()
+    {
+        DenseMatrix result = new DenseMatrix(Rows, Columns);
+        for (int row = 0; row < Rows; row++)
+        {
+            for (int col = 0; col < Columns; col++)
+            {
+                result[row,col] = this[col,row];
+            }
+        }
+        return result;
+    }
+
+    public override void Identity()
+    {
+        if (Rows != Columns)
+        {
+            throw new ArgumentException("Matrix size does not match.");
+        }
+
+        for (int i = 0; i < Rows; i++)
+        {
+            for (int j = 0; j < Columns; j++)
+            {
+                if (i == j)
+                {
+                    _data[i, j] = 1.0f;
+                }
+                else
+                {
+                    _data[i, j] = 0.0f;
+                }
+            }
+        }
+    }
+
+    public override float Norm()
+    {
+        float result =  0.0f;
+        for (int i = 0; i < Rows; i++)
+        {
+            for (int j = 0; j < Columns; j++)
+            {
+                result += this[i, j] * this[i, j];
+            }
+        }
+        return MathF.Sqrt(result);
+        
+    }
+    
 }
