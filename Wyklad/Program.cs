@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using System;
-using System.Text;
+﻿using System.Text;
 
 class Osoba
 {
@@ -245,7 +243,63 @@ class Wyklad
             // discard pattern, equivalent of default:
             _ => throw new ArgumentOutOfRangeException()
         };
+        Console.WriteLine(cardName);
+        
+        // foreach = takie for auto w cpp 
+        int[] array = new int[] {0, 1, 2, 3, 4};
+        int[] array2 = new int[5]; // pusta tablica na 5 miejsc
+        foreach (var i in array)
+            Console.WriteLine(i);
+        foreach (char c in "foreach")
+            Console.WriteLine(c);
+        int pp = default;  // inicjalizujemy pp wartoscia domyslna
+        Console.WriteLine(pp); // odpowiedz 0
+        var ii = 0; // var  =  auto w cpp 
     }
+    static void Foo(ref int p)
+    {
+        p = p + 1;
+        Console.WriteLine(p);
+    }
+    static void referencje()
+    {
+        // ref -> jesli przekazujemy ref zmienna -> przekazujemy referencje do niego 
+        int x = 8;
+        Foo(ref x);
+        Console.WriteLine(x);
+        // out dziala troche ja return , te zmienne ktore maja out int nazwa zostaja "zwracane"
+        void GetData(out int a, out int b)
+        {
+            a = 10;
+            b = 20;
+        }
+
+        int X, Y;
+        GetData(out X, out Y);
+        Console.WriteLine($"{X}, {Y}"); // 10, 20
+        // dodatkowo jak nie chcemy przyjmowac czasem jakiegos argumentu robimy out int _ np Console.WriteLine(out int a, out _ )
+        
+        // in dziala tak ze rzecz jest tylko do odczytu 
+        
+        // params dziala tak ze mozemy przekazac do funckji dowolna ilosc argumentow tego samego typu np :
+        void PrintNumbers(params int[] numbers)
+        {
+            foreach (int n in numbers)
+                Console.WriteLine(n);
+        }
+        PrintNumbers(1, 2, 3, 4, 5);   // ✅ dowolna liczba argumentów
+
+    }
+    /*
+     * przestrzenie nazw : 
+    
+    -namespace -> tak samo jak w c++ 
+    -using nazwa_namespace -> nie trzeba pisac ze cos jest z namespace
+    -using -> takie jak #include
+    -using static -> nie trzeba pisac np Math.Sqrt tylko Sqrt
+    -using global -> to samo co using static tylko dziala we wszyskich plikach projektu
+    -alias : using Vec3 = System.Numerics.Vector3; ( po prostu skracamy)
+     */
     static void Main(string[] args)
     {
         if (args[0] == "1")
@@ -271,6 +325,8 @@ class Wyklad
             tablice();
         else if (args[0] == "9")
             instrukcje();
+        else if (args[0] == "10")
+            referencje();
     }
 }
 
