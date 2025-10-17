@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Runtime.CompilerServices;
+using System.Text;
 
 class Osoba
 {
@@ -300,6 +301,235 @@ class Wyklad
     -using global -> to samo co using static tylko dziala we wszyskich plikach projektu
     -alias : using Vec3 = System.Numerics.Vector3; ( po prostu skracamy)
      */
+    
+    /*
+     Klasy : 
+     public - inne pliki kody ja widza
+     internal / nic sie nie dadaje - widoczna w pliku 
+     static -  nie mozna robic z niej obiektow (dziala jak funckcja) 
+     sealed -  nie da sie dziedziczyc
+     abstract-> po niej tylko sie dziedziczy
+     
+     class Book
+       {
+           private string _title;
+           private int _year;
+           Book(string title) => _title = title;  // jesli dostaniemy sam tytul to przypisze ttile do zmiennej _title
+           Book(string title, int year) : this(title)  // this(title) oznacza ze najpierw przeniesie nas do przypisania Book(string title) => _title=title, a dopiero pozniej zrobi rok
+           {
+               _year = year;
+           }
+       }
+       
+       W C# słowo this ma dwa różne znaczenia, zależnie od tego, gdzie je użyjesz:
+       1️⃣ w środku metody lub konstruktora → oznacza „ten obiekt”,
+       2️⃣ po dwukropku w konstruktorze (: this(...)) → oznacza „inny konstruktor tej samej klasy”.
+     
+        Dekonstruktor : 
+        class Point
+       {
+           public float x, y;
+       
+           public Point(float x, float y)  // konstruktor ( przypsianie zmiennych)
+           {
+               this.x = x;
+               this.y = y;
+           }
+       
+           public void Deconstruct(out float x, out float y) // dekonstruktor -> zwracanie zmiennych z klasy
+           {
+               x = this.x;
+               y = this.y;
+           }
+       }
+     
+     
+     Inicjalizatory :
+     class Hamster
+       {
+           public string Name;
+           public bool LikesViolence;
+       
+           public Hamster() { }
+           public Hamster(string name) => Name = name;
+       }
+       
+       // --- tworzenie obiektów ---
+       Hamster h1 = new Hamster { Name = "Boo", LikesViolence = true };
+       Hamster h2 = new Hamster("Boo") { LikesViolence = true };
+       
+       ostatnie dwie linijkit to inicjalizatory ( dzialaja ostantie po konstruktorach ) 
+       pierwszy inicjalizator inicjalizuje pusty konstruktor a nastepnie sam inicjalizuje 
+       drugi podobnie tylko inny konstruktor
+       
+       get i set -> pozwalaja dostac sie do zmiennych prywatnych
+       public string Name { get; set; } 
+       dziala tak : 
+       private string _name;
+       public string Name
+       {
+           get { return _name; }
+           set { _name = value; }
+       }
+       
+       
+     */
+    //indeksator : 
+    class Sentence
+    {
+        private string[] Words { get; }  // prywatna właściwość przechowująca tablicę słów
+        // (zwraca całą tablicę, ale tylko wewnątrz klasy)
+
+        public string this[int i]        // indeksator — pozwala odczytywać i zmieniać
+            // pojedyncze słowa przez indeks (np. s[0], s[1])
+        {
+            get => Words[i];
+            set { Words[i] = value; }
+        }
+
+        public Sentence(string sentence) // konstruktor — dostaje całe zdanie
+            => Words = sentence.Split(' '); // rozbija je na tablicę słów i zapisuje do Words
+    }
+    
+    // dziedziczeni dziala tak jak w cpp : 
+    public class Person
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Age { get; set; }
+    }
+
+    public class Student : Person
+    {
+        public string StudentID { get; set; }
+    }
+    
+    /*
+      Operator as próbuje rzutować (czyli „przekształcić”) obiekt jednego typu na inny —
+       np. z klasy bazowej (Person) na klasę pochodną (Teacher).
+       
+       Jeśli się uda → zwraca obiekt nowego typu,
+       jeśli się nie uda → zwraca null (zamiast rzucać wyjątek).
+        
+        is :
+        Generalnie operator is sprawdza, czy zmienna pasuje do wzorca i zwraca wynik w postaci boola. 
+        Jednym ze wzorców który nas interesuje jest wzorzec typu.
+     
+        
+     */
+    
+    // ------------------------------
+    // KLASA BAZOWA: Vehicle (pojazd)
+    // ------------------------------
+
+    public class Vehicle
+    {
+        // Właściwość Position — aktualna pozycja pojazdu (np. na drodze).
+        // get -> każdy może odczytać pozycję.
+        // protected set -> tylko ta klasa i klasy dziedziczące mogą ją zmieniać.
+        // = 0 -> początkowa wartość (pojazd startuje z pozycji 0).
+        public float Position { get; protected set; } = 0;
+
+        // Właściwość Speed — aktualna prędkość pojazdu.
+        // virtual -> można ją nadpisać w klasie pochodnej.
+        // protected set -> zmieniać mogą tylko Vehicle i klasy dziedziczące.
+        // = 1.0 -> domyślna prędkość 1 jednostka/s.
+        public virtual float Speed { get; protected set; } = 1.0f;
+
+        // Właściwość Name — nazwa pojazdu.
+        // get bez set -> wartość ustawiana tylko w konstruktorze.
+        public string Name { get; }
+
+        // Konstruktor Vehicle — przyjmuje nazwę pojazdu.
+        // Strzałka => to tzw. expression-bodied constructor (krótki zapis).
+        public Vehicle(string name) => Name = name;
+
+        // Wirtualna metoda Run — symuluje ruch pojazdu przez czas dt (delta time).
+        // virtual -> może być nadpisana w klasach pochodnych (np. Car, Bike).
+        public virtual float Run(float dt)
+        {
+            // Wypisuje komunikat, żeby było widać, że wywołano Vehicle.Run().
+            Console.WriteLine($"Vehicle.Run({dt})");
+
+            // Aktualizuje pozycję: nowa pozycja = stara pozycja + czas * prędkość.
+            // Zwraca zaktualizowaną pozycję.
+            return (Position = Position + dt * Speed);
+        }
+    }
+    // ------------------------------
+    // KLASA POCHODNA: Car (samochód)
+    // ------------------------------
+
+    public class Car : Vehicle
+    {
+        // Nadpisujemy właściwość Speed (prędkość) z klasy bazowej.
+        // override -> oznacza, że to wersja "samochodowa".
+        // protected set -> tylko Car (lub klasy dziedziczące po Car) mogą ją zmieniać.
+        // = 0.0f -> samochód startuje od zera (stoi).
+        public override float Speed { get; protected set; } = 0.0f;
+
+        // Właściwość Acceleration (przyspieszenie) — jak szybko samochód przyspiesza.
+        // virtual -> można ją nadpisać w klasie pochodnej (np. ElectricCar).
+        // get tylko do odczytu — ustalana w konstruktorze.
+        public virtual float Acceleration { get; }
+
+        // Konstruktor Car — przekazuje nazwę do klasy bazowej Vehicle
+        // i ustawia wartość przyspieszenia.
+        // base(name) -> wywołanie konstruktora Vehicle(name)
+        public Car(string name, float acceleration) : base(name) => Acceleration = acceleration;
+
+        // Nadpisujemy metodę Run z klasy Vehicle.
+        // Ta wersja dodaje przyspieszenie (czyli zmienia prędkość w czasie).
+        public override float Run(float dt)
+        {
+            // Dla testów wypisuje, że wywołano Car.Run().
+            Console.WriteLine($"Car.Run({dt})");
+
+            // Aktualizuje pozycję na podstawie prędkości.
+            Position += dt * Speed;
+
+            // Następnie zwiększa prędkość zgodnie z przyspieszeniem.
+            Speed += dt * Acceleration;
+
+            // Zwraca nową pozycję po aktualizacji.
+            return Position;
+        }
+    }
+    // ------------------------------
+    // KLASA POCHODNA: Bike (rower)
+    // ------------------------------
+
+    public class Bike : Vehicle
+    {
+        // Konstruktor Bike — wywołuje konstruktor Vehicle.
+        public Bike(string name) : base(name) {}
+
+        // Nadpisanie metody Run.
+        // W tej wersji rower nie ma własnej logiki ruchu,
+        // ale wypisuje komunikat i korzysta z implementacji klasy bazowej.
+        public override float Run(float dt)
+        {
+            // Wypisanie informacji o wywołaniu Bike.Run().
+            Console.WriteLine($"Bike.Run({dt})");
+
+            // Wywołanie metody bazowej (czyli Vehicle.Run()).
+            // Dzięki temu rower zachowuje się jak "domyślny pojazd".
+            return base.Run(dt);
+        }
+    }
+    /*
+      klasa abstrakcyjna to klasa po ktorej mozna tylko dziedziczyc , jak jakas zmienna jest virutalna to oznacza ze mozna ja napisac
+    
+     jak dziala strzalka => :
+     int Square(int x)
+       {
+           return x * x;
+       } 
+       to rowna sie temu 
+       int Square(int x) => x * x; 
+       czyli po lewej co to za funkcja i jakie argumenty a po prawej co robi
+     */
+    
     static void Main(string[] args)
     {
         if (args[0] == "1")
@@ -327,6 +557,14 @@ class Wyklad
             instrukcje();
         else if (args[0] == "10")
             referencje();
+        else if (args[0] == "11")
+        {
+            Student alice = new Student() { FirstName = "Alice", 
+                LastName = "Brown", 
+                Age = 25, 
+                StudentID = "X-84355" };
+                Console.WriteLine($"{alice.FirstName} {alice.LastName}, {alice.Age}, {alice.StudentID}");
+        }
     }
 }
 
