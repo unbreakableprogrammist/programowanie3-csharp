@@ -72,5 +72,10 @@ public class DenseMatrix : Matrix
         return MathF.Sqrt(result);
         
     }
+    protected override Matrix GetInstance(int rows, int cols)
+    {
+        return new DenseMatrix(rows, cols);
+    }
+
     
 }

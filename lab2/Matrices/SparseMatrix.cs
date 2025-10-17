@@ -2,11 +2,11 @@ namespace Matrices.Matrix;
 
 public class SparseMatrix : Matrix
 {
-    private Dictionary<(int row, int column), int> _data;
+    private Dictionary<(int row, int column), float> _data;
 
     public SparseMatrix(int rows, int columns) : base(rows, columns)
     {
-        _data = new Dictionary<(int row, int column), int>();
+        _data = new Dictionary<(int row, int column), float>();
     }
 
     public override float this[int row, int column]
@@ -32,7 +32,7 @@ public class SparseMatrix : Matrix
 
     public override Matrix Transpose()
     {
-        SparseMatrix result = new SparseMatrix();
+        SparseMatrix result = new SparseMatrix(Columns, Rows);
         foreach (var item in _data)
         {
            (int row, int column) = item.Key;
@@ -60,6 +60,10 @@ public class SparseMatrix : Matrix
             result += val * val;
         
         return MathF.Sqrt(result);
+    }
+    protected override Matrix GetInstance(int rows, int cols)
+    {
+        return  new SparseMatrix(rows, cols);
     }
 
    

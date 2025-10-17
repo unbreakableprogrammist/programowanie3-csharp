@@ -1,0 +1,15 @@
+/Users/krzysztof/Documents/csharp/lab2/Matrices/obj/Debug/net9.0/Matrices.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krzysztof/Documents/csharp/lab2/Matrices/obj/Debug/net9.0/Matrices.AssemblyInfoInputs.cache
+/Users/krzysztof/Documents/csharp/lab2/Matrices/obj/Debug/net9.0/Matrices.AssemblyInfo.cs
+/Users/krzysztof/Documents/csharp/lab2/Matrices/obj/Debug/net9.0/Matrices.csproj.CoreCompileInputs.cache
+/Users/krzysztof/Documents/csharp/lab2/Matrices/obj/Debug/net9.0/Matrices.sourcelink.json
+/Users/krzysztof/Documents/csharp/lab2/Matrices/bin/Debug/net9.0/Matrices
+/Users/krzysztof/Documents/csharp/lab2/Matrices/bin/Debug/net9.0/Matrices.deps.json
+/Users/krzysztof/Documents/csharp/lab2/Matrices/bin/Debug/net9.0/Matrices.runtimeconfig.json
+/Users/krzysztof/Documents/csharp/lab2/Matrices/bin/Debug/net9.0/Matrices.dll
+/Users/krzysztof/Documents/csharp/lab2/Matrices/bin/Debug/net9.0/Matrices.pdb
+/Users/krzysztof/Documents/csharp/lab2/Matrices/obj/Debug/net9.0/Matrices.dll
+/Users/krzysztof/Documents/csharp/lab2/Matrices/obj/Debug/net9.0/refint/Matrices.dll
+/Users/krzysztof/Documents/csharp/lab2/Matrices/obj/Debug/net9.0/Matrices.pdb
+/Users/krzysztof/Documents/csharp/lab2/Matrices/obj/Debug/net9.0/Matrices.genruntimeconfig.cache
+/Users/krzysztof/Documents/csharp/lab2/Matrices/obj/Debug/net9.0/ref/Matrices.dll

@@ -1,5 +1,5 @@
 ﻿#define STAGE01
-// #define STAGE02
+#define STAGE02
 // #define STAGE03
 // #define STAGE04
 
