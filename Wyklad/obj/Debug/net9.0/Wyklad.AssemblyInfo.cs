@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Wyklad")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a16539f5e8b78579e1872ca0d0ddeccc5d949c5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2159f3f7413022c60ee692b841001e1b0638334c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Wyklad")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Wyklad")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

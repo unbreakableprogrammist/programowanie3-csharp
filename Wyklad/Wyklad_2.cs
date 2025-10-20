@@ -1,0 +1,4 @@
+class Wyklad_2
+{
+    
+}
