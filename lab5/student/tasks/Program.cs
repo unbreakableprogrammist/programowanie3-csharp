@@ -9,7 +9,12 @@ public sealed class Program
         var database = new SampleMovieDatabase();
         database.RunQueries();
         PressEnterToContinue();
+        var snake = "EmailAdress";
+        var pascal = snake.SnakeToPascalCase();
+
+        Console.WriteLine(pascal); // "html_element_id"
     }
+    
 
     private  static void PressEnterToContinue()
     {

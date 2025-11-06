@@ -1,0 +1,15 @@
+/Users/krzysztof/Documents/csharp/lab5/student/tasks/obj/Debug/net9.0/tasks.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krzysztof/Documents/csharp/lab5/student/tasks/obj/Debug/net9.0/tasks.AssemblyInfoInputs.cache
+/Users/krzysztof/Documents/csharp/lab5/student/tasks/obj/Debug/net9.0/tasks.AssemblyInfo.cs
+/Users/krzysztof/Documents/csharp/lab5/student/tasks/obj/Debug/net9.0/tasks.csproj.CoreCompileInputs.cache
+/Users/krzysztof/Documents/csharp/lab5/student/tasks/obj/Debug/net9.0/tasks.sourcelink.json
+/Users/krzysztof/Documents/csharp/lab5/student/tasks/bin/Debug/net9.0/tasks
+/Users/krzysztof/Documents/csharp/lab5/student/tasks/bin/Debug/net9.0/tasks.deps.json
+/Users/krzysztof/Documents/csharp/lab5/student/tasks/bin/Debug/net9.0/tasks.runtimeconfig.json
+/Users/krzysztof/Documents/csharp/lab5/student/tasks/bin/Debug/net9.0/tasks.dll
+/Users/krzysztof/Documents/csharp/lab5/student/tasks/bin/Debug/net9.0/tasks.pdb
+/Users/krzysztof/Documents/csharp/lab5/student/tasks/obj/Debug/net9.0/tasks.dll
+/Users/krzysztof/Documents/csharp/lab5/student/tasks/obj/Debug/net9.0/refint/tasks.dll
+/Users/krzysztof/Documents/csharp/lab5/student/tasks/obj/Debug/net9.0/tasks.pdb
+/Users/krzysztof/Documents/csharp/lab5/student/tasks/obj/Debug/net9.0/tasks.genruntimeconfig.cache
+/Users/krzysztof/Documents/csharp/lab5/student/tasks/obj/Debug/net9.0/ref/tasks.dll
