@@ -42,8 +42,11 @@ public static class StringExtensions
       sb.Append(char.ToUpper(str[0]));
       for (int i = 1; i < str.Length; i++)
       {
-         if(str[i]=='_')
-            sb.Append(char.ToUpper(str[(i+1)]));
+         if (str[i] == '_')
+         {
+            sb.Append(char.ToUpper(str[(i + 1)]));
+            i += 1;
+         }
          else
             sb.Append(str[i]);
       }

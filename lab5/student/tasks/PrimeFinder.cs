@@ -7,6 +7,27 @@ public static class PrimeFinder
 {
     public static IEnumerable<int> SieveOfEratosthenes(int upperBound)
     {
-        throw new NotImplementedException();
+        if (upperBound <= 0)
+        {
+            yield break;
+        }
+        bool[] sito = new bool[upperBound + 7]; // false = pierwsza , true = nie pierwsza
+        sito[0] = true;
+        sito[1] = true;
+        for (int i = 0; i <= upperBound; i++)
+        {
+            if (sito[i] == false)
+            {
+                for (int j = i * i; j <= upperBound; j += i)
+                {
+                    sito[j] = true;
+                }
+            }
+
+            if (sito[i] == false)
+            {
+                yield return i;
+            }
+        }
     }
 }
