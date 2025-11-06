@@ -1,4 +1,0 @@
-class Wyklad_2
-{
-    
-}
