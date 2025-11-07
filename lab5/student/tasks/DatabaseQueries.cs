@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Net.Http.Headers;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using tasks.Databases;
 
@@ -7,6 +8,9 @@ namespace tasks;
 /// <summary>
 /// Here you should implement various database query methods for the IMovieDatabase interface.
 /// </summary>
+///
+/// Każde wyrażenie LINQ zwraca IEnumerable<T> (lub IQueryable<T> jeśli źródłem jest baza).
+///Czyli rezultatem LINQ jest zawsze sekwencja, czyli obiekt, po którym można iterować.
 public static class DatabaseQueries
 {
     public static void RunQueries(this IMovieDatabase movieDatabase)
@@ -30,13 +34,59 @@ public static class DatabaseQueries
         var ratings = movieDatabase.Ratings;
         var casts = movieDatabase.Casts;
 
-        var queryResult = new object();
+        /*
+            Najpierw wybieramy tylko filmy z gatunku Fantasy:
+                movies.Where(m => m.Genre == Genre.Fantasy)
+
+            Następnie łączymy je z obsadą (casts) po MovieId = Id filmu:
+                casts.Join(...)
+
+            Z tego połączenia bierzemy ActorId,
+            czyli dostajemy listę aktorów grających w filmach fantasy:
+                (cast, mov) => cast.ActorId
+            to nam zwroci taka pojedyncze rekordy , tak jak to wygladalo w accesie
+
+            Distinct() usuwa duplikaty — bo jeden aktor mógł grać w kilku filmach fantasy.
+
+            Następnie ponownie robimy Join, tym razem z tabelą aktorów (actors),
+            po ActorId = actor.Id, żeby zamienić identyfikatory na imiona aktorów:
+                .Join(actors, actorId => actorId, actor => actor.Id, ...)
+
+            Ostatecznie zwracamy same nazwy aktorów:
+                (actorId, actor) => actor.Name
+        */
+            
+        var queryResult =  casts.Join(movies.Where(m => m.Genre == Genre.Fantasy),
+            cast=>cast.MovieId,
+            mov=>mov.Id,
+            (cast,mov)=>cast.ActorId)
+            .Distinct()
+            .Join(actors,
+                actorId=>actorId,
+                actor=>actor.Id,
+                (actorId,actor) =>actor.Name
+            ).ToList();
+        
 
         Console.WriteLine("Actors From Fantasy Movies");
         DisplayQueryResults(queryResult);
         Console.WriteLine();
     }
 
+    /*
+         Grupujemy filmy względem gatunku:
+             movies.GroupBy(m => m.Genre)
+         czyli dostajemy grupy postaci:
+             Genre -> lista filmów w tym gatunku
+
+         Następnie dla każdej grupy wybieramy jeden rekord — ten,
+         który ma największą długość (DurationMinutes):
+             group.MaxBy(movie => movie.DurationMinutes)
+
+         Select tworzy wynikowy obiekt z dwoma polami:
+         - Genre = group.Key (czyli nazwa gatunku)
+         - Movie = najdłuższy film w tym gatunku
+     */
     public static void LongestMovieByGenre(this IMovieDatabase movieDatabase)
     {
         var movies = movieDatabase.Movies;
@@ -44,7 +94,13 @@ public static class DatabaseQueries
         var ratings = movieDatabase.Ratings;
         var casts = movieDatabase.Casts;
 
-        var queryResult = new object();
+        var queryResult = movies
+            .GroupBy(m => m.Genre)
+            .Select(group => new 
+                {
+                    Genre = group.Key,
+                    Movie = group.MaxBy(movie => movie.DurationMinutes)
+                }).ToList();
 
         Console.WriteLine("Longest Movie By Genre");
         DisplayQueryResults(queryResult);
@@ -58,7 +114,53 @@ public static class DatabaseQueries
         var ratings = movieDatabase.Ratings;
         var casts = movieDatabase.Casts;
 
-        var queryResult = new object();
+        var queryResult = ratings
+            .GroupBy(r => r.MovieId)                      // Grupujemy oceny według Id filmu:
+                                                           //   group.Key = MovieId
+                                                           //   group = sekwencja Rating dla tego MovieId
+                                                           // Przykład (logicznie):
+                                                           //   Key=1 → [(Id=1,MovieId=1,Score=8), (Id=2,MovieId=1,Score=9)]
+
+            .Select(group => new                           // Dla każdej grupy budujemy obiekt (Id Filmu , srednia ocen) 
+            {
+                MovieId = group.Key,                       //   Id filmu (klucz grupy)
+                Average = group.Average(r => r.Score)      //   średnia ocena tego filmu
+            })
+
+            .Where(x => x.Average > 8)                     // Zostawiamy tylko filmy o średniej ocenie > 8
+            .Join(movies,                                  // Łączymy z tabelą filmów (INNER JOIN), bo may tabele obiektow select i laczymy po kluczu z movie Id
+                  rat => rat.MovieId,                      //   klucz po stronie średnich ocen: MovieId
+                  mov => mov.Id,                           //   klucz po stronie filmów: Id
+                  (rat, mov) => new                        //   wynikowo chcemy dostac rekord rzeczy z tabeli ( jako klucz) , srednia jako wartosc
+                  {
+                      Movie = mov,                         //     pełny rekord filmu , czyli bierzemy calosc z rekord filmu , czyli tytul idt
+                      rat.Average                          //     średnia ocena (przenosimy z poprzedniego etapu) , dodajemy
+                  })
+
+            .GroupJoin(casts,                              // LEFT JOIN: do każdego filmu dobieramy jego obsadę (może być pusta)
+                       mov => mov.Movie.Id,                //   klucz po stronie filmów: Movie.Id
+                       cast => cast.MovieId,               //   klucz po stronie obsady: Cast.MovieId
+                       (mov, cast) => new             //   wynikowo dostajemy rekord ( wszystko z Movie , srednia ocen , i dodajemy nowy wiersz id aktorow ktorzy graja w tym filmie
+                       {
+                           mov.Movie,                      //     film
+                           mov.Average,                    //     średnia ocena
+                           CastIDS = cast             //     sekwencja dopasowanych wpisów obsady (Cast ...)
+                               .Select(c => c.ActorId)     //     rzutujemy do samych ActorId (IEnumerable<int>)
+                       })
+
+            .Select(x => new                               // Dla każdego filmu budujemy wynik końcowy film , srednia , i wybieramy imiona aktorow, i wrzucamy ich do listy
+            {
+                x.Movie,                                   //   film
+                x.Average,                                 //   średnia ocena
+                Cast = x.CastIDS                           //   zamieniamy ActorId → pełne rekordy aktorów
+                    .Join(actors,                          //   (INNER JOIN po ActorId)
+                          actorId => actorId,              //     klucz po stronie ActorId (outer): int
+                          actor   => actor.Id,             //     klucz po stronie aktorów: Actor.Id
+                          (actorId, actor) => actor.Name)       //     projekcja: bierzemy pełny rekord aktora
+                    .ToList()                              //   materializacja listy aktorów (żeby ładnie zserializować)
+            })
+            .ToList();                                     // Materializacja całej odpowiedzi (IEnumerable → List)
+      
 
         Console.WriteLine("High Rated Movies With Cast");
         DisplayQueryResults(queryResult);
@@ -72,7 +174,16 @@ public static class DatabaseQueries
         var ratings = movieDatabase.Ratings;
         var casts = movieDatabase.Casts;
 
-        var queryResult = new object();
+        var queryResult = actors.GroupJoin(casts,
+            actor => actor.Id,
+            cast => cast.ActorId,
+            (actor,cast) => new
+            {
+                Actor = actor.Name,
+                Roles = cast.Select(c => c.Role).Distinct().Count(),
+            }
+            ).OrderBy(x => x.Roles)
+            .ToList();
 
         Console.WriteLine("Distinct Roles Count Per Actor");
         DisplayQueryResults(queryResult);
@@ -86,7 +197,19 @@ public static class DatabaseQueries
         var ratings = movieDatabase.Ratings;
         var casts = movieDatabase.Casts;
 
-        var queryResult = new object();
+        var queryResult = movies.Where(m => m.Year > DateTime.Now.Year - 5)
+                .GroupJoin(ratings,
+                    mov => mov.Id,
+                    rat => rat.MovieId,
+                    (mov,rat) => new
+                    {
+                        Movie = mov,
+                        Avarage = rat.Any() ? rat.Average(r => r.Score) : 0.00
+                    }
+                    )
+                .OrderByDescending(x => x.Avarage)
+                .ToList();
+            
 
         Console.WriteLine("Recent Movies With Average Rating");
         DisplayQueryResults(queryResult);
@@ -100,7 +223,22 @@ public static class DatabaseQueries
         var ratings = movieDatabase.Ratings;
         var casts = movieDatabase.Casts;
 
-        var queryResult = new object();
+        var queryResult = movies.Join(ratings,   // dostajemy cos typu fantasy : 8 , fantasy : 9  , thriller : 8
+            mov => mov.Id,
+            rat => rat.MovieId,
+            (mov, rat) => new  // tworzymy nowe pole , jedna rzecz z movie druga z rating
+            {
+                Genre = mov.Genre,
+                Rating = rat.Score,
+            }
+            )
+            .GroupBy(m => m.Genre)   // grupujemy by genre , czyli teraz mamy klucz , { ratings} , np fantastyka : { 8,9,10,1} 
+            .Select(group => new  // wybieramy stamtad te wszytskie grupy , czyli fantastyka : {liczba ocen } 
+            {
+                Genre = group.Key,
+                AvarageRating = group.Select(r => r.Rating).Average(),   // tworzymy zmienna z sredniej ocen
+            }).ToList();
+        
 
         Console.WriteLine("Average Rating By Genre");
         DisplayQueryResults(queryResult);
@@ -114,7 +252,13 @@ public static class DatabaseQueries
         var ratings = movieDatabase.Ratings;
         var casts = movieDatabase.Casts;
 
-        var queryResult = new object();
+        var thrillerMovieIds = movies.Where(m => m.Genre == Genre.Thriller).Select(m => m.Id).ToHashSet(); // w hashsecie trzymamy id tych movies ktore sa thrileramu
+        var thrillerActorIds =
+            casts.Where(c => thrillerMovieIds.Contains(c.MovieId)).Select(c => c.ActorId).ToHashSet();  // w tym hashsecie trzymamy te id aktorow ktorzy zagrali w thrillerze , po prostu id filmu musialo byc w hashsecie
+        
+        var queryResult = actors
+            .Where(actor => !thrillerActorIds.Contains(actor.Id)) // tu bierzemy id tych aktorow , ze nie ma ich w hashsecie z aktorami ktorzy tam grali 
+            .ToList();
 
         Console.WriteLine("Actors Who Never Played In Thriller");
         DisplayQueryResults(queryResult);

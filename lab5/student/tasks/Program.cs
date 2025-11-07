@@ -15,11 +15,13 @@ public sealed class Program
         */
 
         /*Console.WriteLine(pascal); // "html_element_id"*/
-        foreach (var prime in PrimeFinder.SieveOfEratosthenes(11))
+        /*foreach (var prime in PrimeFinder.SieveOfEratosthenes(11))
         {
             if (prime > 850) break;
             Console.WriteLine(prime);
-        }
+        }*/
+        
+        
     }
     
 
