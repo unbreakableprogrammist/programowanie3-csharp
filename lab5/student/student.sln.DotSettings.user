@@ -1,0 +1,26 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6835b374_002Dc93f_002D485f_002Db41c_002Ddb9be59c8374/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;tests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Project Location="/Users/krzysztof/Documents/csharp/lab5/student/tests" Presentation="&amp;lt;tests&amp;gt;" /&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=74039c82_002Dfb8b_002D4630_002Db884_002Dc403cf945412/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="StringExtensionsTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::37B58E32-EB1A-4836-812F-DE5DA4250068::net9.0::tests.ArrayBinaryTreeTests&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7945bab2_002Dad81_002D4818_002Dbbc1_002D9c881b0c32b1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="StringExtensionsTests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::37B58E32-EB1A-4836-812F-DE5DA4250068::net9.0::tests.StringExtensionsTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::37B58E32-EB1A-4836-812F-DE5DA4250068::net9.0::tests.PrimeFinderTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::37B58E32-EB1A-4836-812F-DE5DA4250068::net9.0::tests.ArrayBinaryTreeTests&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=85400288_002D2c27_002D4029_002D84b7_002D6e8bac6b266f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="PascalToSnakeCase_ShouldConvertCorrectly #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::37B58E32-EB1A-4836-812F-DE5DA4250068::net9.0::tests.StringExtensionsTests.PascalToSnakeCase_ShouldConvertCorrectly&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9540ac71_002D1050_002D49e5_002D93c2_002Dd3e6c8c13d9a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="PascalToSnakeCase_ShouldConvertCorrectly" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::37B58E32-EB1A-4836-812F-DE5DA4250068::net9.0::tests.StringExtensionsTests.PascalToSnakeCase_ShouldConvertCorrectly&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

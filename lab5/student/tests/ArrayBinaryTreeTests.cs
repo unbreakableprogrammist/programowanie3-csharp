@@ -1,8 +1,9 @@
-﻿using FluentAssertions;
+﻿#define TASK02
+using FluentAssertions;
 using tasks;
 
 namespace tests;
-
+#if TASK02
 public class ArrayBinaryTreeTests
 {
     [Fact]
@@ -377,3 +378,4 @@ public class ArrayBinaryTreeTests
         tree.Count.Should().Be(3);
     }
 }
+#endif
