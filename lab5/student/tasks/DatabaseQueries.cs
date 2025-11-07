@@ -301,6 +301,25 @@ public static class DatabaseQueries
         Console.WriteLine();
     }
 
+    /*
+        MoviesWithoutRatings — cel:
+        znaleźć filmy, które nie mają żadnej oceny.
+
+        Krok 1: budujemy zbiór (HashSet<int>) identyfikatorów filmów, które pojawiły się w tabeli Ratings:
+            var moviesWithRatings = ratings.Select(r => r.MovieId).ToHashSet();
+            // HashSet daje O(1) dla Contains – wydajnie przy dużych danych.
+
+        Krok 2: filtrujemy listę filmów – zostawiamy te, których Id NIE MA w zbiorze:
+            var queryResult = movies.Where(m => !moviesWithRatings.Contains(m.Id)).ToList();
+
+        Intuicja tabelaryczna:
+            MoviesWithRatings = { Id filmów występujących w Ratings }
+            Wynik = Movies \ MoviesWithRatings
+
+        Typowe potknięcia, na które uważamy:
+        - GroupBy tutaj nie jest potrzebne; szybciej i prościej jest brać same klucze .Select(r => r.MovieId).
+        - Nazewnictwo: lokalne zmienne zwykle camelCase → moviesWithRatings (nie: MoviesWithRatings).
+    */
     public static void MoviesWithoutRatings(this IMovieDatabase movieDatabase)
     {
         var movies = movieDatabase.Movies;
@@ -316,6 +335,58 @@ public static class DatabaseQueries
         Console.WriteLine();
     }
 
+    
+    /*
+        MostVersatileActors — cel:
+        policzyć, w ILU RÓŻNYCH GATUNKACH grał każdy aktor (liczymy DISTINCT po Genre),
+        a potem posortować malejąco (najbardziej "wszechstronni" na górze).
+
+        Krok 1: łączymy obsadę z filmami, żeby do każdej roli dołączyć gatunek filmu:
+            casts.Join(movies,
+                cast => cast.MovieId,
+                mov  => mov.Id,
+                (cast, mov) => new { cast.ActorId, mov.Genre })
+
+            Wynik: sekwencja krotek (ActorId, Genre) – po jednej na KAŻDĄ rolę w filmie.
+
+        Krok 2: grupujemy po aktorze:
+            .GroupBy(x => x.ActorId)
+
+            Każda grupa to: ActorId → lista (ActorId, Genre, ...) dla wszystkich jego ról.
+
+        Krok 3: dla każdej grupy liczymy "liczbę unikalnych gatunków":
+            .Select(g => new {
+                ActorId    = g.Key,
+                GenreCount = g.Select(x => x.Genre).Distinct().Count()
+            })
+
+            Dlaczego Distinct? Bo ten sam aktor mógł mieć wiele ról w filmach tego samego gatunku –
+            interesuje nas liczba różnych gatunków, nie liczba ról.
+
+        Krok 4: zamieniamy ActorId na pełny rekord aktora (Join z actors), żeby mieć nazwisko/imie/etc.:
+            .Join(actors,
+                agg => agg.ActorId,
+                a   => a.Id,
+                (agg, a) => new { Actor = a, agg.GenreCount })
+
+        Krok 5: sortujemy malejąco po liczbie gatunków i materializujemy:
+            .OrderByDescending(x => x.GenreCount)
+            .ToList()
+
+        Uwagi:
+        - Jeśli chcesz wyeliminować ewentualne duplikaty ról PRZED liczeniem gatunków,
+          możesz dodać Distinct po (ActorId, Genre): np. .Select(t => (t.ActorId, t.Genre)).Distinct()
+          – ale obecny Distinct na Genre w ramach aktora zazwyczaj wystarcza.
+        - Gdy chcesz także tie-break (np. po nazwisku), dodaj ThenBy(x => x.Actor.Name).
+
+        Intuicja krokowa (metoda naukowa):
+        1) cast ⨝ movies → (ActorId, Genre) dla każdej roli,
+        2) GroupBy(ActorId) → zbiory ról per aktor,
+        3) Distinct(Genre).Count() → liczba unikalnych gatunków,
+        4) ⨝ actors → dane aktora,
+        5) sortowanie malejąco po wszechstronności.
+
+    */
     public static void MostVersatileActors(this IMovieDatabase movieDatabase)
     {
         var movies = movieDatabase.Movies;
