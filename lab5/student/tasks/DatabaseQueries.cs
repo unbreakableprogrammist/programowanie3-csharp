@@ -272,7 +272,29 @@ public static class DatabaseQueries
         var ratings = movieDatabase.Ratings;
         var casts = movieDatabase.Casts;
 
-        var queryResult = new object();
+        
+        var queryResult = ratings.GroupBy(r => r.MovieId)
+            .Select(r => new
+            {
+                movieId = r.Key,
+                howMany = r.Count()
+            })
+            .OrderByDescending(x => x.howMany)
+            .Join(movies,
+                rat => rat.movieId,
+                mov=> mov.Id,
+                (rat,mov) => mov)
+            .Take(3)
+            .ToList();
+        
+        /*
+        var queryResult = ratings
+            .GroupBy(rating => rating.MovieId)
+            .OrderByDescending(group => group.Count())
+            .Take(3)
+            .Select(group => movies.First(movie => movie.Id == group.Key))
+            .ToList();
+            */
 
         Console.WriteLine("Top 3 Movies By Rating Count");
         DisplayQueryResults(queryResult);
@@ -286,7 +308,8 @@ public static class DatabaseQueries
         var ratings = movieDatabase.Ratings;
         var casts = movieDatabase.Casts;
 
-        var queryResult = new object();
+        var MoviesWithRatings = ratings.Select(r => r.MovieId).ToHashSet();
+        var queryResult = movies.Where(r => !MoviesWithRatings.Contains(r.Id)).ToList();
 
         Console.WriteLine("Movies Without Ratings");
         DisplayQueryResults(queryResult);
@@ -300,8 +323,31 @@ public static class DatabaseQueries
         var ratings = movieDatabase.Ratings;
         var casts = movieDatabase.Casts;
 
-        var queryResult = new object();
-
+        var queryResult = casts.Join(movies,
+                cast => cast.MovieId,
+                mov => mov.Id,
+                (cast, mov) => new
+                {
+                    cast.ActorId,
+                    mov.Genre
+                })
+            .GroupBy(m => m.ActorId)
+            .Select(r => new
+            {
+                ActorId = r.Key,
+                GenreCount = r.Select(r => r.Genre).Distinct().Count(),
+            })
+            .Join(actors,
+                act => act.ActorId,
+                actor => actor.Id,
+                (act,actor)=>new
+                {
+                    Actor = actor,
+                    act.GenreCount
+                })
+            .OrderByDescending(a => a.GenreCount)
+            .ToList();
+            
         Console.WriteLine("Most Versatile Actors");
         DisplayQueryResults(queryResult);
         Console.WriteLine();
