@@ -1,0 +1,15 @@
+/Users/krzysztof/Documents/csharp/streams_lab7/streams_lab7/bin/Debug/net9.0/streams_lab7
+/Users/krzysztof/Documents/csharp/streams_lab7/streams_lab7/bin/Debug/net9.0/streams_lab7.deps.json
+/Users/krzysztof/Documents/csharp/streams_lab7/streams_lab7/bin/Debug/net9.0/streams_lab7.runtimeconfig.json
+/Users/krzysztof/Documents/csharp/streams_lab7/streams_lab7/bin/Debug/net9.0/streams_lab7.dll
+/Users/krzysztof/Documents/csharp/streams_lab7/streams_lab7/bin/Debug/net9.0/streams_lab7.pdb
+/Users/krzysztof/Documents/csharp/streams_lab7/streams_lab7/obj/Debug/net9.0/streams_lab7.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krzysztof/Documents/csharp/streams_lab7/streams_lab7/obj/Debug/net9.0/streams_lab7.AssemblyInfoInputs.cache
+/Users/krzysztof/Documents/csharp/streams_lab7/streams_lab7/obj/Debug/net9.0/streams_lab7.AssemblyInfo.cs
+/Users/krzysztof/Documents/csharp/streams_lab7/streams_lab7/obj/Debug/net9.0/streams_lab7.csproj.CoreCompileInputs.cache
+/Users/krzysztof/Documents/csharp/streams_lab7/streams_lab7/obj/Debug/net9.0/streams_lab7.sourcelink.json
+/Users/krzysztof/Documents/csharp/streams_lab7/streams_lab7/obj/Debug/net9.0/streams_lab7.dll
+/Users/krzysztof/Documents/csharp/streams_lab7/streams_lab7/obj/Debug/net9.0/refint/streams_lab7.dll
+/Users/krzysztof/Documents/csharp/streams_lab7/streams_lab7/obj/Debug/net9.0/streams_lab7.pdb
+/Users/krzysztof/Documents/csharp/streams_lab7/streams_lab7/obj/Debug/net9.0/streams_lab7.genruntimeconfig.cache
+/Users/krzysztof/Documents/csharp/streams_lab7/streams_lab7/obj/Debug/net9.0/ref/streams_lab7.dll
