@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "File_system_watcher/1.0.0": {
+        "runtime": {
+          "File_system_watcher.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "File_system_watcher/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -107,8 +107,46 @@ class Program{
         }
     }
 
+    static public void paths()
+    {
+        string path = Path.GetFullPath("podsumowanie.md");
+        
+
+        Console.WriteLine($"File Name: {Path.GetFileName(path)}"); // hugo.yaml
+        Console.WriteLine($"Name without extension: {Path.GetFileNameWithoutExtension(path)}"); // hugo
+        Console.WriteLine($"Extension: {Path.GetExtension(path)}");  // .yaml
+        Console.WriteLine($"Parent Directory: {Path.GetDirectoryName(path)}"); // Workspace/csharp-site
+        Console.WriteLine($"Full Path: {Path.GetFullPath(path)}"); // /home/tomasz/Workspace/csharp-site/hugo.yaml (resolves relative to the current working directory)
+        Console.WriteLine($"Directory Separator: {Path.DirectorySeparatorChar}"); // \ (on Windows) / (on Linux)
+    }
+
+    static public void pliczki()
+    {
+        using FileStream fs = File.Open("lorem.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+        using StreamWriter sr = new StreamWriter(fs);
+        for (int i = 0; i < 1000; i++)
+        {
+            char litera = (char)((i%26)+'a');
+            sr.Write($"{i} : {litera} \n");
+        }
+        Console.WriteLine(File.GetCreationTime("lorem.txt"));
+        const int GB = 1024 * 1024 * 1024;
+        DriveInfo root = new DriveInfo("/");
+
+        Console.WriteLine($"Total size: {root.TotalSize / GB} GB");
+        Console.WriteLine($"Free size: {root.TotalFreeSpace / GB} GB"); // Ignoring quotas
+        Console.WriteLine($"Available size: {root.AvailableFreeSpace / GB} GB");
+
+        foreach (DriveInfo drive in DriveInfo.GetDrives())
+        {
+            Console.WriteLine(drive.Name);
+        }
+        
+    }
     static void Main(string[] args)
     {
-        adaptery_strumieni();
+        //adaptery_strumieni();
+        //paths();
+        //pliczki();
     }
 }

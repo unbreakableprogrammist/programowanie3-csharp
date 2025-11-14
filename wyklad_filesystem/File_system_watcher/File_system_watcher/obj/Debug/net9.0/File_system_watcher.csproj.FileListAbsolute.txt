@@ -1,0 +1,15 @@
+/Users/krzysztof/Documents/csharp/wyklad_filesystem/File_system_watcher/File_system_watcher/bin/Debug/net9.0/File_system_watcher
+/Users/krzysztof/Documents/csharp/wyklad_filesystem/File_system_watcher/File_system_watcher/bin/Debug/net9.0/File_system_watcher.deps.json
+/Users/krzysztof/Documents/csharp/wyklad_filesystem/File_system_watcher/File_system_watcher/bin/Debug/net9.0/File_system_watcher.runtimeconfig.json
+/Users/krzysztof/Documents/csharp/wyklad_filesystem/File_system_watcher/File_system_watcher/bin/Debug/net9.0/File_system_watcher.dll
+/Users/krzysztof/Documents/csharp/wyklad_filesystem/File_system_watcher/File_system_watcher/bin/Debug/net9.0/File_system_watcher.pdb
+/Users/krzysztof/Documents/csharp/wyklad_filesystem/File_system_watcher/File_system_watcher/obj/Debug/net9.0/File_system_watcher.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krzysztof/Documents/csharp/wyklad_filesystem/File_system_watcher/File_system_watcher/obj/Debug/net9.0/File_system_watcher.AssemblyInfoInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad_filesystem/File_system_watcher/File_system_watcher/obj/Debug/net9.0/File_system_watcher.AssemblyInfo.cs
+/Users/krzysztof/Documents/csharp/wyklad_filesystem/File_system_watcher/File_system_watcher/obj/Debug/net9.0/File_system_watcher.csproj.CoreCompileInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad_filesystem/File_system_watcher/File_system_watcher/obj/Debug/net9.0/File_system_watcher.sourcelink.json
+/Users/krzysztof/Documents/csharp/wyklad_filesystem/File_system_watcher/File_system_watcher/obj/Debug/net9.0/File_system_watcher.dll
+/Users/krzysztof/Documents/csharp/wyklad_filesystem/File_system_watcher/File_system_watcher/obj/Debug/net9.0/refint/File_system_watcher.dll
+/Users/krzysztof/Documents/csharp/wyklad_filesystem/File_system_watcher/File_system_watcher/obj/Debug/net9.0/File_system_watcher.pdb
+/Users/krzysztof/Documents/csharp/wyklad_filesystem/File_system_watcher/File_system_watcher/obj/Debug/net9.0/File_system_watcher.genruntimeconfig.cache
+/Users/krzysztof/Documents/csharp/wyklad_filesystem/File_system_watcher/File_system_watcher/obj/Debug/net9.0/ref/File_system_watcher.dll
