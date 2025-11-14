@@ -9,9 +9,10 @@ class Program
     
     static void Watch(string path, string filter, bool includeSubDirs)
     {
+        // FIleSystemWatcher to jakis delegat w klasie FileSystemWatcher
         using var watcher = new FileSystemWatcher(path, filter);
-        watcher.Created += OnCreated;
-        watcher.Changed += OnChanged;
+        watcher.Created += OnCreated; // subskrybcja jesli created
+        watcher.Changed += OnChanged; //
         watcher.Deleted += OnDeleted;
         watcher.Renamed += OnRenamed;
         watcher.Error += OnError;
