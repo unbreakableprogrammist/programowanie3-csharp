@@ -1,0 +1,15 @@
+/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/bin/Debug/net9.0/ShopEvents
+/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/bin/Debug/net9.0/ShopEvents.deps.json
+/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/bin/Debug/net9.0/ShopEvents.runtimeconfig.json
+/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/bin/Debug/net9.0/ShopEvents.dll
+/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/bin/Debug/net9.0/ShopEvents.pdb
+/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/obj/Debug/net9.0/ShopEvents.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/obj/Debug/net9.0/ShopEvents.AssemblyInfoInputs.cache
+/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/obj/Debug/net9.0/ShopEvents.AssemblyInfo.cs
+/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/obj/Debug/net9.0/ShopEvents.csproj.CoreCompileInputs.cache
+/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/obj/Debug/net9.0/ShopEvents.sourcelink.json
+/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/obj/Debug/net9.0/ShopEvents.dll
+/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/obj/Debug/net9.0/refint/ShopEvents.dll
+/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/obj/Debug/net9.0/ShopEvents.pdb
+/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/obj/Debug/net9.0/ShopEvents.genruntimeconfig.cache
+/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/obj/Debug/net9.0/ref/ShopEvents.dll
