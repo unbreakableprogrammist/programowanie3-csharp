@@ -3,3 +3,8 @@ etap 1:
         {
             return path;
         }
+    if Path.GetExtension == ".zip" 
+        string tempRoot = Path.GetTempPath();
+        string folderName = .GetFileNameWithoutExtension(path);
+        int count = Directory.GetFiles(path, "*", SearchOption.AllDirectories).Length;
+    
