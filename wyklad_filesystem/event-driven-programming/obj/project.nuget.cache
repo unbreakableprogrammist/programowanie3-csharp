@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oVyrSnrWa5g=",
+  "dgSpecHash": "iCjy5o7YtRE=",
   "success": true,
-  "projectFilePath": "/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/ShopEvents.csproj",
+  "projectFilePath": "/Users/krzysztof/Documents/csharp/wyklad_filesystem/event-driven-programming/ShopEvents.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

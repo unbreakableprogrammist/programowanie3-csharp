@@ -143,10 +143,48 @@ class Program{
         }
         
     }
-    static void Main(string[] args)
+
+    public static void archiwa()
     {
-        //adaptery_strumieni();
-        //paths();
-        //pliczki();
+        // katalog źródłowy do spakowania
+        const string sourceDirectory = "my_files_to_zip";
+// ścieżka docelowa ZIP-a
+        const string zipPath = "archive.zip";
+// katalog, do którego wypakujemy ZIP
+        const string extractPath = "extracted_files";
+
+// --- Przygotowanie plików do spakowania ---
+
+// tworzymy katalog (jeśli nie istnieje, nic złego się nie stanie)
+        Directory.CreateDirectory(sourceDirectory);
+
+// tworzymy plik "file1.txt" z treścią "Hello"
+        File.WriteAllText(Path.Combine(sourceDirectory, "file1.txt"), "Hello");
+
+// tworzymy podfolder "subfolder"
+        Directory.CreateDirectory(Path.Combine(sourceDirectory, "subfolder"));
+
+// tworzymy plik "file2.txt" w podfolderze
+        File.WriteAllText(Path.Combine(sourceDirectory, "subfolder", "file2.txt"), "World");
+
+
+// --- Tworzenie archiwum ZIP ---
+
+// jeśli ZIP już istnieje → usuń go, aby nowy nie robił konfliktu
+        if (File.Exists(zipPath)) 
+            File.Delete(zipPath);
+
+// spakuj cały katalog sourceDirectory do pliku ZIP
+        ZipFile.CreateFromDirectory(sourceDirectory, zipPath);
+
+
+// --- Rozpakowanie ZIP-a ---
+
+// jeśli katalog docelowy istnieje → usuń go rekursywnie (żeby wypakować „na czysto”)
+        if (Directory.Exists(extractPath)) 
+            Directory.Delete(extractPath, recursive: true);
+
+// wypakuj ZIP do katalogu extractPath
+        ZipFile.ExtractToDirectory(zipPath, extractPath);
     }
 }

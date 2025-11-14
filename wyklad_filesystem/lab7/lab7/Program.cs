@@ -1,4 +1,6 @@
-﻿class Program
+﻿using System.IO.Compression;
+
+class Program
 {
     public static void Watch(string path)
     {
@@ -18,9 +20,13 @@
             Console.WriteLine("Zdjecie ${path} , zostalo przeniesione do ${new_path}");
         }
 
-        void Archives(string path)
+        void Archives(string archpath)
         {
-            Console.WriteLine("Archives");
+            string name =  Path.GetDirectoryName(archpath);
+            ZipFile.ExtractToDirectory(archpath, name,overwriteFiles:true);
+            File.Delete(archpath);
+        
+            Console.WriteLine($"Extracted {archpath} to {name}");
         }
         void OnError(object sender, ErrorEventArgs e)
         {

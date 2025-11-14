@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/ShopEvents.csproj",
+      "projectUniqueName": "/Users/krzysztof/Documents/csharp/wyklad_filesystem/event-driven-programming/ShopEvents.csproj",
       "projectName": "ShopEvents",
-      "projectPath": "/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/ShopEvents.csproj",
+      "projectPath": "/Users/krzysztof/Documents/csharp/wyklad_filesystem/event-driven-programming/ShopEvents.csproj",
       "packagesPath": "/Users/krzysztof/.nuget/packages/",
-      "outputPath": "/Users/krzysztof/Documents/csharp/Wykład2/event-driven-programming/obj/",
+      "outputPath": "/Users/krzysztof/Documents/csharp/wyklad_filesystem/event-driven-programming/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/krzysztof/.nuget/NuGet/NuGet.Config"
