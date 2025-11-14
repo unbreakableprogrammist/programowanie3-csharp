@@ -31,9 +31,12 @@ File.WriteAllLines("lorem_lines.txt", lines);
 
 //przyklad lazy porgrammingu , bedziemy czytac te linie dopoku gdy zaczniemy isc forem po lines2
 IEnumerable<string> lines2 = File.ReadLines("lorem.txt");
-File.AppendAllLines("lorem.txt.bak", lines2);
 
+// takie cos wywoluje enumeracje 
+File.AppendAllLines("lorem3.txt", lines2);
 foreach (var line in lines2)
 {
     Console.WriteLine(line);
 }
+
+Sr
