@@ -1,0 +1,15 @@
+/Users/krzysztof/Documents/csharp/wyklad_assembly/Benchmark/bin/Debug/net9.0/Benchmark
+/Users/krzysztof/Documents/csharp/wyklad_assembly/Benchmark/bin/Debug/net9.0/Benchmark.deps.json
+/Users/krzysztof/Documents/csharp/wyklad_assembly/Benchmark/bin/Debug/net9.0/Benchmark.runtimeconfig.json
+/Users/krzysztof/Documents/csharp/wyklad_assembly/Benchmark/bin/Debug/net9.0/Benchmark.dll
+/Users/krzysztof/Documents/csharp/wyklad_assembly/Benchmark/bin/Debug/net9.0/Benchmark.pdb
+/Users/krzysztof/Documents/csharp/wyklad_assembly/Benchmark/obj/Debug/net9.0/Benchmark.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krzysztof/Documents/csharp/wyklad_assembly/Benchmark/obj/Debug/net9.0/Benchmark.AssemblyInfoInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad_assembly/Benchmark/obj/Debug/net9.0/Benchmark.AssemblyInfo.cs
+/Users/krzysztof/Documents/csharp/wyklad_assembly/Benchmark/obj/Debug/net9.0/Benchmark.csproj.CoreCompileInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad_assembly/Benchmark/obj/Debug/net9.0/Benchmark.sourcelink.json
+/Users/krzysztof/Documents/csharp/wyklad_assembly/Benchmark/obj/Debug/net9.0/Benchmark.dll
+/Users/krzysztof/Documents/csharp/wyklad_assembly/Benchmark/obj/Debug/net9.0/refint/Benchmark.dll
+/Users/krzysztof/Documents/csharp/wyklad_assembly/Benchmark/obj/Debug/net9.0/Benchmark.pdb
+/Users/krzysztof/Documents/csharp/wyklad_assembly/Benchmark/obj/Debug/net9.0/Benchmark.genruntimeconfig.cache
+/Users/krzysztof/Documents/csharp/wyklad_assembly/Benchmark/obj/Debug/net9.0/ref/Benchmark.dll
