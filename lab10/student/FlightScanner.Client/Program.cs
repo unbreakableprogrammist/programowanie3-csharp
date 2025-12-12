@@ -83,7 +83,35 @@ public class Program
             // nie musimy robic task run bo 
             taski.Add(GetFlightsFromProviderAsync(provider, koniec.Token, progress));
         }
+        var results = await Task.WhenAll(taski); // czekamy az wszystkie sie skoncza i zapisujemy wyniki tych taskow w tablicy 
+        progress.Report("\n[Phase 3] Aggregating and displaying results...");
+        var top10CheapestFlights = results
+            .Where(response => response != null && response.Flights != null) // jesli tablica istnieje
+            /*
+              Select many sluzy do splaszaczania zagniezdzonych list : 
+              [
+                   Provider1 → [lot1, lot2, lot3]
+                   Provider2 → [lot4]
+                   Provider3 → [lot5, lot6]
+               ]:
+               SelectMany : 
+                   [lot1, lot2, lot3, lot4, lot5, lot6] 
+                i kazdy lot transformuje na strukture AggregatedFlightOffer
+             */
+            .SelectMany( 
+                response => response!.Flights,  // wykrzyknik = to nie jest null
+                (response, flight) => new AggregatedFlightOffer(
+                    response!.ProviderName,
+                    flight.FlightId,
+                    flight.Origin,
+                    flight.Destination,
+                    flight.Price
+                ))
+            .OrderBy(offer => offer.Price)
+            .Take(10)
+            .ToList();
 
+        DisplayTop10Flights(top10CheapestFlights);
     }
 
     public static async Task<ProviderResponseDto?> GetFlightsFromProviderAsync(
@@ -97,16 +125,31 @@ public class Program
             // odpalamy asynchronicznie ( czyli odpalamy i czekamy na wynik ) funckje GetAsync 
             // get async - to funckcja ktora jest asynchroniczna i zwraca odpowiedz http ok/json/404
             // wazne ze tutaj mozemy zauwazyc ze nasza funkcja getFlightFromProvider sie zatrzymuje ale ten for ktory nas wywolal dziala
+            // response to typ HttpResponseMessage
             var response = await httpClient.GetAsync(provider.Endpoint, koniec);
             if (!response.IsSuccessStatusCode)
             {
                 progress.Report($"\t[FAIL] {provider.Name} returned HTTP {(int)response.StatusCode} ({response.ReasonPhrase})");
                 return null;
             }
-            // tu dopisz 
-
+            // teraz wiemy ze nawiazalismy polaczenie wiec mozemy wyciagnac z tego response Jsona zgodnego z ProviderResponseDTO
+            var providerResponse = await response.Content.ReadFromJsonAsync<ProviderResponseDto>();
+            progress.Report($"\t[SUCCESS] {provider.Name} returned {providerResponse?.Flights.Count ?? 0} flights.");
+            return providerResponse;
+        }
+        catch (OperationCanceledException)
+        {
+            progress.Report($"\t[TIMEOUT] {provider.Name} did not respond in time.");
+            return null;
+        }
+        catch (Exception ex)
+        {
+            progress.Report($"\t[ERROR] {provider.Name} failed: {ex.Message}");
+            return null;
         }
     }
+        
+    
     public static async Task Main(string[] args)
     {
         Console.WriteLine("Starting...");
