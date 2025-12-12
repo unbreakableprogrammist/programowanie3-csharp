@@ -1,0 +1,12 @@
+/Users/krzysztof/Documents/csharp/lab10/student/FlightScanner.Common/bin/Debug/net9.0/FlightScanner.Common.deps.json
+/Users/krzysztof/Documents/csharp/lab10/student/FlightScanner.Common/bin/Debug/net9.0/FlightScanner.Common.dll
+/Users/krzysztof/Documents/csharp/lab10/student/FlightScanner.Common/bin/Debug/net9.0/FlightScanner.Common.pdb
+/Users/krzysztof/Documents/csharp/lab10/student/FlightScanner.Common/obj/Debug/net9.0/FlightScanner.Common.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krzysztof/Documents/csharp/lab10/student/FlightScanner.Common/obj/Debug/net9.0/FlightScanner.Common.AssemblyInfoInputs.cache
+/Users/krzysztof/Documents/csharp/lab10/student/FlightScanner.Common/obj/Debug/net9.0/FlightScanner.Common.AssemblyInfo.cs
+/Users/krzysztof/Documents/csharp/lab10/student/FlightScanner.Common/obj/Debug/net9.0/FlightScanner.Common.csproj.CoreCompileInputs.cache
+/Users/krzysztof/Documents/csharp/lab10/student/FlightScanner.Common/obj/Debug/net9.0/FlightScanner.Common.sourcelink.json
+/Users/krzysztof/Documents/csharp/lab10/student/FlightScanner.Common/obj/Debug/net9.0/FlightScanner.Common.dll
+/Users/krzysztof/Documents/csharp/lab10/student/FlightScanner.Common/obj/Debug/net9.0/refint/FlightScanner.Common.dll
+/Users/krzysztof/Documents/csharp/lab10/student/FlightScanner.Common/obj/Debug/net9.0/FlightScanner.Common.pdb
+/Users/krzysztof/Documents/csharp/lab10/student/FlightScanner.Common/obj/Debug/net9.0/ref/FlightScanner.Common.dll

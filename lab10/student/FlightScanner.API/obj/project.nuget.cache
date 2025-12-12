@@ -1,20 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "WRVqGmUY1D0=",
+  "dgSpecHash": "9pHC64I58R4=",
   "success": true,
   "projectFilePath": "/Users/krzysztof/Documents/csharp/lab10/student/FlightScanner.API/FlightScanner.API.csproj",
   "expectedPackageFiles": [
     "/Users/krzysztof/.nuget/packages/microsoft.aspnetcore.openapi/9.0.6/microsoft.aspnetcore.openapi.9.0.6.nupkg.sha512",
-    "/Users/krzysztof/.nuget/packages/microsoft.extensions.apidescription.server/9.0.0/microsoft.extensions.apidescription.server.9.0.0.nupkg.sha512",
+    "/Users/krzysztof/.nuget/packages/microsoft.extensions.apidescription.server/10.0.0/microsoft.extensions.apidescription.server.10.0.0.nupkg.sha512",
     "/Users/krzysztof/.nuget/packages/microsoft.openapi/2.3.0/microsoft.openapi.2.3.0.nupkg.sha512",
     "/Users/krzysztof/.nuget/packages/swashbuckle.aspnetcore/10.0.0/swashbuckle.aspnetcore.10.0.0.nupkg.sha512",
     "/Users/krzysztof/.nuget/packages/swashbuckle.aspnetcore.swagger/10.0.0/swashbuckle.aspnetcore.swagger.10.0.0.nupkg.sha512",
     "/Users/krzysztof/.nuget/packages/swashbuckle.aspnetcore.swaggergen/10.0.0/swashbuckle.aspnetcore.swaggergen.10.0.0.nupkg.sha512",
     "/Users/krzysztof/.nuget/packages/swashbuckle.aspnetcore.swaggerui/10.0.0/swashbuckle.aspnetcore.swaggerui.10.0.0.nupkg.sha512",
-    "/Users/krzysztof/.nuget/packages/system.text.json/8.0.5/system.text.json.8.0.5.nupkg.sha512",
-    "/Users/krzysztof/.nuget/packages/microsoft.netcore.app.ref/9.0.11/microsoft.netcore.app.ref.9.0.11.nupkg.sha512",
-    "/Users/krzysztof/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.11/microsoft.aspnetcore.app.ref.9.0.11.nupkg.sha512",
-    "/Users/krzysztof/.nuget/packages/microsoft.netcore.app.host.osx-arm64/9.0.11/microsoft.netcore.app.host.osx-arm64.9.0.11.nupkg.sha512"
+    "/Users/krzysztof/.nuget/packages/system.text.json/8.0.5/system.text.json.8.0.5.nupkg.sha512"
   ],
   "logs": []
 }

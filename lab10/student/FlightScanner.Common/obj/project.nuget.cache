@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yeg45wUzMLQ=",
+  "dgSpecHash": "vuVUhQFotak=",
   "success": true,
   "projectFilePath": "/Users/krzysztof/Documents/csharp/lab10/student/FlightScanner.Common/FlightScanner.Common.csproj",
-  "expectedPackageFiles": [
-    "/Users/krzysztof/.nuget/packages/microsoft.netcore.app.ref/9.0.11/microsoft.netcore.app.ref.9.0.11.nupkg.sha512",
-    "/Users/krzysztof/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.11/microsoft.aspnetcore.app.ref.9.0.11.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
