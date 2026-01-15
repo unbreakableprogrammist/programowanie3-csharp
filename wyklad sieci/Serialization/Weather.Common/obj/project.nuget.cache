@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "7U7UzGryPwQ=",
+  "success": true,
+  "projectFilePath": "/Users/krzysztof/Documents/csharp/wyklad sieci/Serialization/Weather.Common/Weather.Common.csproj",
+  "expectedPackageFiles": [
+    "/Users/krzysztof/.nuget/packages/microsoft.netcore.app.ref/9.0.11/microsoft.netcore.app.ref.9.0.11.nupkg.sha512",
+    "/Users/krzysztof/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.11/microsoft.aspnetcore.app.ref.9.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}
