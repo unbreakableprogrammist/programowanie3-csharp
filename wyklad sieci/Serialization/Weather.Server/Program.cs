@@ -13,7 +13,7 @@ namespace Weather.Server;
 
 public static class Program
 {
-    const int Port = 5000;
+    const int Port = 5001;
     public static async Task Main()
     {
         CancellationTokenSource cts = new CancellationTokenSource();

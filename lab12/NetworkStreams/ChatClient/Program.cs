@@ -172,7 +172,7 @@ class Program
         
         progress.Report("Connected to server");
         return client;
-        }
-        
     }
+        
 }
+

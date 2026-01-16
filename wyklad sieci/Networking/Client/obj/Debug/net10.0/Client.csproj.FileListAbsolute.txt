@@ -1,0 +1,15 @@
+/Users/krzysztof/Documents/csharp/wyklad sieci/Networking/Client/bin/Debug/net10.0/Client
+/Users/krzysztof/Documents/csharp/wyklad sieci/Networking/Client/bin/Debug/net10.0/Client.deps.json
+/Users/krzysztof/Documents/csharp/wyklad sieci/Networking/Client/bin/Debug/net10.0/Client.runtimeconfig.json
+/Users/krzysztof/Documents/csharp/wyklad sieci/Networking/Client/bin/Debug/net10.0/Client.dll
+/Users/krzysztof/Documents/csharp/wyklad sieci/Networking/Client/bin/Debug/net10.0/Client.pdb
+/Users/krzysztof/Documents/csharp/wyklad sieci/Networking/Client/obj/Debug/net10.0/Client.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krzysztof/Documents/csharp/wyklad sieci/Networking/Client/obj/Debug/net10.0/Client.AssemblyInfoInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad sieci/Networking/Client/obj/Debug/net10.0/Client.AssemblyInfo.cs
+/Users/krzysztof/Documents/csharp/wyklad sieci/Networking/Client/obj/Debug/net10.0/Client.csproj.CoreCompileInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad sieci/Networking/Client/obj/Debug/net10.0/Client.sourcelink.json
+/Users/krzysztof/Documents/csharp/wyklad sieci/Networking/Client/obj/Debug/net10.0/Client.dll
+/Users/krzysztof/Documents/csharp/wyklad sieci/Networking/Client/obj/Debug/net10.0/refint/Client.dll
+/Users/krzysztof/Documents/csharp/wyklad sieci/Networking/Client/obj/Debug/net10.0/Client.pdb
+/Users/krzysztof/Documents/csharp/wyklad sieci/Networking/Client/obj/Debug/net10.0/Client.genruntimeconfig.cache
+/Users/krzysztof/Documents/csharp/wyklad sieci/Networking/Client/obj/Debug/net10.0/ref/Client.dll

@@ -1,0 +1,12 @@
+/Users/krzysztof/Documents/csharp/wyklad sieci/Serialization/Weather.Common/bin/Debug/net9.0/Weather.Common.deps.json
+/Users/krzysztof/Documents/csharp/wyklad sieci/Serialization/Weather.Common/bin/Debug/net9.0/Weather.Common.dll
+/Users/krzysztof/Documents/csharp/wyklad sieci/Serialization/Weather.Common/bin/Debug/net9.0/Weather.Common.pdb
+/Users/krzysztof/Documents/csharp/wyklad sieci/Serialization/Weather.Common/obj/Debug/net9.0/Weather.Common.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krzysztof/Documents/csharp/wyklad sieci/Serialization/Weather.Common/obj/Debug/net9.0/Weather.Common.AssemblyInfoInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad sieci/Serialization/Weather.Common/obj/Debug/net9.0/Weather.Common.AssemblyInfo.cs
+/Users/krzysztof/Documents/csharp/wyklad sieci/Serialization/Weather.Common/obj/Debug/net9.0/Weather.Common.csproj.CoreCompileInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad sieci/Serialization/Weather.Common/obj/Debug/net9.0/Weather.Common.sourcelink.json
+/Users/krzysztof/Documents/csharp/wyklad sieci/Serialization/Weather.Common/obj/Debug/net9.0/Weather.Common.dll
+/Users/krzysztof/Documents/csharp/wyklad sieci/Serialization/Weather.Common/obj/Debug/net9.0/refint/Weather.Common.dll
+/Users/krzysztof/Documents/csharp/wyklad sieci/Serialization/Weather.Common/obj/Debug/net9.0/Weather.Common.pdb
+/Users/krzysztof/Documents/csharp/wyklad sieci/Serialization/Weather.Common/obj/Debug/net9.0/ref/Weather.Common.dll

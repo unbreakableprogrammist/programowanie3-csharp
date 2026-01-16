@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FractalsGenerator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+170d11848c3fb2d10f1028c8139c5d0e346df632")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27f6c7066bff489904e5b93a270cbd704bd9728b")]
 [assembly: System.Reflection.AssemblyProductAttribute("FractalsGenerator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FractalsGenerator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
