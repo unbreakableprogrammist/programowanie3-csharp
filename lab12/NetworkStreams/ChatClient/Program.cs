@@ -155,7 +155,24 @@ class Program
 
     static async Task<TcpClient?> Connect(string host, int port, IProgress<string> progress)
     {
-        // TODO
-        throw new NotImplementedException();
+        progress.Report($"Connecting to {host}:{port}");
+        using var cts = new CancellationTokenSource(connectTimeoutMs);
+        // tworzymy nasz obiekt po naszej stronie ktory bedize sie komunikowal z serwerem 
+        var client = new TcpClient();
+        try
+        {
+            // asynchronicznie probujemy dolaczyc sie do serwera, ale watek jest zwalniany
+            await client.ConnectAsync(host, port, cts.Token);
+        }
+        catch(OperationCanceledException)
+        {
+            progress.Report($"[TIMEOUT] Failed to connect to server within {connectTimeoutMs}ms.");
+            return null;
+        }
+        
+        progress.Report("Connected to server");
+        return client;
+        }
+        
     }
 }
