@@ -11,9 +11,16 @@ public class KvServer(string pipeName)
         {
             while (!ct.IsCancellationRequested)
             {
-                // TODO
-                throw new NotImplementedException();
-
+                // podlaczamy sie do tego samego pipe
+                await using var server = new NamedPipeServerStream(
+                    pipeName,
+                    PipeDirection.InOut,
+                    1,
+                    PipeTransmissionMode.Byte, 
+                    PipeOptions.Asynchronous);
+                // czekamy az klient sie podlaczy
+                await server.WaitForConnectionAsync(ct);
+                // wtedy odpalamy zeby sie ogarnac clienta
                 await HandleClientAsync(server, ct);
             }
         }
@@ -28,9 +35,31 @@ public class KvServer(string pipeName)
     private async Task HandleClientAsync(NamedPipeServerStream pipe, CancellationToken ct)
     {
         Console.WriteLine("Client connected.");
-        
-        // TODO
-        throw new NotImplementedException();
+        // czytacz 
+        using var reader = new StreamReader(pipe, Encoding.UTF8);
+        // pisacz
+        using var writer = new StreamWriter(pipe, Encoding.UTF8) { AutoFlush = true };
+        try
+        {
+            // dopoki nie ma cr lub pipe sie nie rozlaczy
+            while (!ct.IsCancellationRequested && pipe.IsConnected)
+            {
+                // wez linijke ( moze byc null), czekaj na nia asynchronicznie
+                string? line = await reader.ReadLineAsync(ct);
+                // jesli null to finito
+                if (line == null) break;
+                // napisz odpowiedz 
+                string response = ProcessCommand(line);
+                // wpisujemy + zwalniamy watek dopoki nie wpisze sie wszystko do pipe 
+                await writer.WriteLineAsync(response);
+            }
+        }
+        catch (IOException)
+        {
+            Console.WriteLine("Problem with client communication");
+        }
+       
+        Console.WriteLine("Client disconnected.");
     }
     
     private string ProcessCommand(string input)
