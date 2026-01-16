@@ -7,7 +7,7 @@ namespace ChatClient;
 class Program
 {
     const string defaultHost = "localhost";
-    const int defaultPort = 5000;
+    const int defaultPort = 5001;
     const int connectTimeoutMs = 3000;
 
     static async Task Main(string[] args)

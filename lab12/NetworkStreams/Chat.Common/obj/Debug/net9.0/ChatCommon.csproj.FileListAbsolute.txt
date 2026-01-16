@@ -1,0 +1,13 @@
+/Users/krzysztof/Documents/csharp/lab12/NetworkStreams/Chat.Common/bin/Debug/net9.0/ChatCommon.deps.json
+/Users/krzysztof/Documents/csharp/lab12/NetworkStreams/Chat.Common/bin/Debug/net9.0/ChatCommon.dll
+/Users/krzysztof/Documents/csharp/lab12/NetworkStreams/Chat.Common/bin/Debug/net9.0/ChatCommon.pdb
+/Users/krzysztof/Documents/csharp/lab12/NetworkStreams/Chat.Common/obj/Debug/net9.0/ChatCommon.csproj.AssemblyReference.cache
+/Users/krzysztof/Documents/csharp/lab12/NetworkStreams/Chat.Common/obj/Debug/net9.0/ChatCommon.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krzysztof/Documents/csharp/lab12/NetworkStreams/Chat.Common/obj/Debug/net9.0/ChatCommon.AssemblyInfoInputs.cache
+/Users/krzysztof/Documents/csharp/lab12/NetworkStreams/Chat.Common/obj/Debug/net9.0/ChatCommon.AssemblyInfo.cs
+/Users/krzysztof/Documents/csharp/lab12/NetworkStreams/Chat.Common/obj/Debug/net9.0/ChatCommon.csproj.CoreCompileInputs.cache
+/Users/krzysztof/Documents/csharp/lab12/NetworkStreams/Chat.Common/obj/Debug/net9.0/ChatCommon.sourcelink.json
+/Users/krzysztof/Documents/csharp/lab12/NetworkStreams/Chat.Common/obj/Debug/net9.0/ChatCommon.dll
+/Users/krzysztof/Documents/csharp/lab12/NetworkStreams/Chat.Common/obj/Debug/net9.0/refint/ChatCommon.dll
+/Users/krzysztof/Documents/csharp/lab12/NetworkStreams/Chat.Common/obj/Debug/net9.0/ChatCommon.pdb
+/Users/krzysztof/Documents/csharp/lab12/NetworkStreams/Chat.Common/obj/Debug/net9.0/ref/ChatCommon.dll
