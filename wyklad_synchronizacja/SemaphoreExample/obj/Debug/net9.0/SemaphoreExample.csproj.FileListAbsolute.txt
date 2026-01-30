@@ -1,0 +1,15 @@
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/SemaphoreExample/bin/Debug/net9.0/SemaphoreExample
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/SemaphoreExample/bin/Debug/net9.0/SemaphoreExample.deps.json
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/SemaphoreExample/bin/Debug/net9.0/SemaphoreExample.runtimeconfig.json
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/SemaphoreExample/bin/Debug/net9.0/SemaphoreExample.dll
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/SemaphoreExample/bin/Debug/net9.0/SemaphoreExample.pdb
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/SemaphoreExample/obj/Debug/net9.0/SemaphoreExample.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/SemaphoreExample/obj/Debug/net9.0/SemaphoreExample.AssemblyInfoInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/SemaphoreExample/obj/Debug/net9.0/SemaphoreExample.AssemblyInfo.cs
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/SemaphoreExample/obj/Debug/net9.0/SemaphoreExample.csproj.CoreCompileInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/SemaphoreExample/obj/Debug/net9.0/SemaphoreExample.sourcelink.json
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/SemaphoreExample/obj/Debug/net9.0/SemaphoreExample.dll
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/SemaphoreExample/obj/Debug/net9.0/refint/SemaphoreExample.dll
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/SemaphoreExample/obj/Debug/net9.0/SemaphoreExample.pdb
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/SemaphoreExample/obj/Debug/net9.0/SemaphoreExample.genruntimeconfig.cache
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/SemaphoreExample/obj/Debug/net9.0/ref/SemaphoreExample.dll
