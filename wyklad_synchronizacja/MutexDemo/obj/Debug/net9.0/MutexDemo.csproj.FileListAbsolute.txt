@@ -1,0 +1,15 @@
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/MutexDemo/bin/Debug/net9.0/MutexDemo
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/MutexDemo/bin/Debug/net9.0/MutexDemo.deps.json
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/MutexDemo/bin/Debug/net9.0/MutexDemo.runtimeconfig.json
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/MutexDemo/bin/Debug/net9.0/MutexDemo.dll
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/MutexDemo/bin/Debug/net9.0/MutexDemo.pdb
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/MutexDemo/obj/Debug/net9.0/MutexDemo.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/MutexDemo/obj/Debug/net9.0/MutexDemo.AssemblyInfoInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/MutexDemo/obj/Debug/net9.0/MutexDemo.AssemblyInfo.cs
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/MutexDemo/obj/Debug/net9.0/MutexDemo.csproj.CoreCompileInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/MutexDemo/obj/Debug/net9.0/MutexDemo.sourcelink.json
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/MutexDemo/obj/Debug/net9.0/MutexDemo.dll
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/MutexDemo/obj/Debug/net9.0/refint/MutexDemo.dll
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/MutexDemo/obj/Debug/net9.0/MutexDemo.pdb
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/MutexDemo/obj/Debug/net9.0/MutexDemo.genruntimeconfig.cache
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/MutexDemo/obj/Debug/net9.0/ref/MutexDemo.dll

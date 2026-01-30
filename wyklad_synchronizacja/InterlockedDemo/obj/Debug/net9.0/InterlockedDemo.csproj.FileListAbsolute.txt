@@ -1,0 +1,15 @@
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/InterlockedDemo/bin/Debug/net9.0/InterlockedDemo
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/InterlockedDemo/bin/Debug/net9.0/InterlockedDemo.deps.json
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/InterlockedDemo/bin/Debug/net9.0/InterlockedDemo.runtimeconfig.json
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/InterlockedDemo/bin/Debug/net9.0/InterlockedDemo.dll
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/InterlockedDemo/bin/Debug/net9.0/InterlockedDemo.pdb
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/InterlockedDemo/obj/Debug/net9.0/InterlockedDemo.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/InterlockedDemo/obj/Debug/net9.0/InterlockedDemo.AssemblyInfoInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/InterlockedDemo/obj/Debug/net9.0/InterlockedDemo.AssemblyInfo.cs
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/InterlockedDemo/obj/Debug/net9.0/InterlockedDemo.csproj.CoreCompileInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/InterlockedDemo/obj/Debug/net9.0/InterlockedDemo.sourcelink.json
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/InterlockedDemo/obj/Debug/net9.0/InterlockedDemo.dll
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/InterlockedDemo/obj/Debug/net9.0/refint/InterlockedDemo.dll
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/InterlockedDemo/obj/Debug/net9.0/InterlockedDemo.pdb
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/InterlockedDemo/obj/Debug/net9.0/InterlockedDemo.genruntimeconfig.cache
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/InterlockedDemo/obj/Debug/net9.0/ref/InterlockedDemo.dll

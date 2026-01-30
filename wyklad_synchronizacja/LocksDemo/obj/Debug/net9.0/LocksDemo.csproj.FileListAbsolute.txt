@@ -1,0 +1,15 @@
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/LocksDemo/bin/Debug/net9.0/LocksDemo
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/LocksDemo/bin/Debug/net9.0/LocksDemo.deps.json
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/LocksDemo/bin/Debug/net9.0/LocksDemo.runtimeconfig.json
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/LocksDemo/bin/Debug/net9.0/LocksDemo.dll
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/LocksDemo/bin/Debug/net9.0/LocksDemo.pdb
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/LocksDemo/obj/Debug/net9.0/LocksDemo.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/LocksDemo/obj/Debug/net9.0/LocksDemo.AssemblyInfoInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/LocksDemo/obj/Debug/net9.0/LocksDemo.AssemblyInfo.cs
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/LocksDemo/obj/Debug/net9.0/LocksDemo.csproj.CoreCompileInputs.cache
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/LocksDemo/obj/Debug/net9.0/LocksDemo.sourcelink.json
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/LocksDemo/obj/Debug/net9.0/LocksDemo.dll
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/LocksDemo/obj/Debug/net9.0/refint/LocksDemo.dll
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/LocksDemo/obj/Debug/net9.0/LocksDemo.pdb
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/LocksDemo/obj/Debug/net9.0/LocksDemo.genruntimeconfig.cache
+/Users/krzysztof/Documents/csharp/wyklad_synchronizacja/LocksDemo/obj/Debug/net9.0/ref/LocksDemo.dll
